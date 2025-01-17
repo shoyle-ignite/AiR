@@ -1,0 +1,76 @@
+﻿table CompanyTree
+
+	column EmployeeID
+		dataType: string
+		summarizeBy: none
+		sourceColumn: EmployeeID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmployeeName
+		dataType: string
+		summarizeBy: none
+		sourceColumn: EmployeeName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentID
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ParentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentName
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ParentName
+
+		annotation SummarizationSetBy = Automatic
+
+	column title = "title"
+		dataType: string
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobTitle
+		dataType: string
+		summarizeBy: none
+		sourceColumn: JobTitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CompanyTree = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("sqlsrvidsanalyticsprd.database.usgovcloudapi.net", "IDSDW", [Query="select
+				    employee.code as [EmployeeID],
+				    employee.name as [EmployeeName],
+				    case when employee.number = 101416 then null else manager.code end as [ParentID],
+				    case when employee.number = 101416 then null else manager.name end as [ParentName],
+				    position.name as [JobTitle],
+				    case when jamis.Department = '1001' then 'Direct' when jamis.Department = '9001' then 'Indirect' end as [Type]
+				FROM edw.dim_employee employee
+				left join edw.fact_manager_history manager_h on manager_h.employee_id = employee.id and manager_h.is_current = 1
+				left join edw.dim_employee manager on manager.id = manager_h.manager_id
+				left join edw.fact_position_history position_h on position_h.employee_id = employee.id and position_h.is_current = 1
+				left join edw.dim_position position on position.id = position_h.position_id
+				left join ods.jamis_dl_jamis_employee jamis on jamis.EmployeeNumber = employee.number
+				where employee.is_active = 1 and (employee.number = 101416 or manager.code is not null)"])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
