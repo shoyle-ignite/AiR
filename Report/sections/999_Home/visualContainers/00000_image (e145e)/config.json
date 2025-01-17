@@ -1,0 +1,38 @@
+{
+  "name": "e145e1d924b9ce179978",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 1123,
+        "y": 3,
+        "z": 2000,
+        "width": 150,
+        "height": 65,
+        "tabOrder": 2000
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "image",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "imageUrl": {
+              "expr": {
+                "ResourcePackageItem": {
+                  "PackageName": "RegisteredResources",
+                  "PackageType": 1,
+                  "ItemName": "DnA_Logo4764303656801596.png"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "howCreated": "InsertVisualButton"
+}
