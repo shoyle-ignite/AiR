@@ -1,0 +1,162 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "CompanyTree",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Property": "ParentID"
+              },
+              "Name": "CompanyTree.ParentID",
+              "NativeReferenceName": "ParentID"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Property": "EmployeeID"
+              },
+              "Name": "CompanyTree.EmployeeID",
+              "NativeReferenceName": " Employee ID"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "c"
+                      }
+                    },
+                    "Property": "EmployeeName"
+                  }
+                },
+                "Function": 3
+              },
+              "Name": "Min(CompanyTree.EmployeeName)",
+              "NativeReferenceName": "Name"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "c"
+                      }
+                    },
+                    "Property": "JobTitle"
+                  }
+                },
+                "Function": 3
+              },
+              "Name": "Min(CompanyTree.JobTitle)",
+              "NativeReferenceName": "Job Title"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "c"
+                      }
+                    },
+                    "Property": "Type"
+                  }
+                },
+                "Function": 3
+              },
+              "Name": "Min(CompanyTree.Type)",
+              "NativeReferenceName": "Type"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "c"
+                      }
+                    },
+                    "Property": "EmployeeID"
+                  }
+                },
+                "Function": 3
+              },
+              "Name": "CountNonNull(CompanyTree.EmployeeID)",
+              "NativeReferenceName": "Employee ID"
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "c"
+                        }
+                      },
+                      "Property": "EmployeeID"
+                    }
+                  },
+                  "Function": 3
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  1
+                ]
+              },
+              {
+                "Projections": [
+                  0,
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 3,
+            "Primary": {
+              "Window": {
+                "Count": 10000
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}
