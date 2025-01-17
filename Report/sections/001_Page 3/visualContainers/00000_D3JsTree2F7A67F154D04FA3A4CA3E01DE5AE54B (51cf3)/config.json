@@ -1,0 +1,300 @@
+{
+  "name": "51cf3507b8eee5917d0b",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 9.884169884169884,
+        "y": 0,
+        "z": 0,
+        "width": 1270.11583011583,
+        "height": 719.56756756756761,
+        "tabOrder": 0
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "D3JsTree2F7A67F154D04FA3A4CA3E01DE5AE54B",
+    "projections": {
+      "id": [
+        {
+          "queryRef": "Query1 (2).EmployeeID"
+        }
+      ],
+      "measure": [
+        {
+          "queryRef": "Query1 (2).EmployeeName"
+        }
+      ],
+      "parentId": [
+        {
+          "queryRef": "Query1 (2).ParentID"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "q1",
+          "Entity": "CompanyTree",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "q1"
+              }
+            },
+            "Property": "EmployeeID"
+          },
+          "Name": "Query1 (2).EmployeeID",
+          "NativeReferenceName": "EmployeeID"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "q1"
+              }
+            },
+            "Property": "EmployeeName"
+          },
+          "Name": "Query1 (2).EmployeeName",
+          "NativeReferenceName": "EmployeeName"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "q1"
+              }
+            },
+            "Property": "ParentID"
+          },
+          "Name": "Query1 (2).ParentID",
+          "NativeReferenceName": "ParentID"
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true,
+    "objects": {
+      "TreeGeneral": [
+        {
+          "properties": {
+            "defaultExpandedLevel": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "defaultX": {
+              "expr": {
+                "Literal": {
+                  "Value": "50D"
+                }
+              }
+            },
+            "defaultY": {
+              "expr": {
+                "Literal": {
+                  "Value": "50D"
+                }
+              }
+            },
+            "orientation": {
+              "expr": {
+                "Literal": {
+                  "Value": "'vertical'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "Label": [
+        {
+          "properties": {
+            "displayText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{Measure}'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            },
+            "showBackground": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "backgroundColour": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontColour": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "textPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "enableUrl": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "Node": [
+        {
+          "properties": {
+            "nodesDistance": {
+              "expr": {
+                "Literal": {
+                  "Value": "150D"
+                }
+              }
+            },
+            "spaceBetweenNodeAndText": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "shapeType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'circle'"
+                }
+              }
+            },
+            "showTextInsideNode": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "25D"
+                }
+              }
+            },
+            "rootNodeText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ignite Digital Services'"
+                }
+              }
+            },
+            "collapsedColour": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "borderThickness": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "ExpandCollapse": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "ConditionalFormat": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "Link": [
+        {
+          "properties": {
+            "lineType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'corner'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
