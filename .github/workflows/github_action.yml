@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      - name: Install Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
@@ -22,6 +22,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
 
-      - name: Run Python script to track file changes
-        run: |
-          python track_file_changes.py
+    - name: Run Python script to print changed files
+      run: |
+        python -c "
+import subprocess
+changed_files = subprocess.check_output(['git', 'diff', '--name-only', 'HEAD~1']).decode('utf-8').splitlines()
+print('Changed files:')
+for file in changed_files:
+    print(file)
+        "
