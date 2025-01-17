@@ -26,7 +26,7 @@ jobs:
       id: changed_files
       run: |
         # Get a list of changed PBIX files
-        CHANGED_FILES=$(git diff --name-only ${{ github.event.before }})
+        CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
         echo "Changed files: $CHANGED_FILES" >> $GITHUB_ENV
 
     - name: Publix PBIX to Power BI
