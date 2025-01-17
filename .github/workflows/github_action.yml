@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: "3.9"
-        
+
     - name: Get Changed Files
       id: changed-files
       run: |
@@ -25,11 +25,11 @@ jobs:
         CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
         echo "changed_files=$CHANGED_FILES" >> $GITHUB_ENV
 
-      - name: Run Python Script
-        run: |
-          import os
-          changed_files = os.getenv('changed_files', '').split()
-          print("Changed files:")
-          for file in changed_files:
-              print(file)
-        shell: python
+    - name: Run Python Script
+      run: |
+        import os
+        changed_files = os.getenv('changed_files', '').split()
+        print("Changed files:")
+        for file in changed_files:
+            print(file)
+      shell: python
