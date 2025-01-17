@@ -1,0 +1,347 @@
+{
+  "objects": {
+    "TreeGeneral": [
+      {
+        "properties": {
+          "defaultExpandedLevel": {
+            "expr": {
+              "Literal": {
+                "Value": "2D"
+              }
+            }
+          },
+          "defaultX": {
+            "expr": {
+              "Literal": {
+                "Value": "50D"
+              }
+            }
+          },
+          "defaultY": {
+            "expr": {
+              "Literal": {
+                "Value": "50D"
+              }
+            }
+          },
+          "orientation": {
+            "expr": {
+              "Literal": {
+                "Value": "'vertical'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "Label": [
+      {
+        "properties": {
+          "displayText": {
+            "expr": {
+              "Literal": {
+                "Value": "'{Measure}'"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "9D"
+              }
+            }
+          },
+          "fontFamily": {
+            "expr": {
+              "Literal": {
+                "Value": "'Arial'"
+              }
+            }
+          },
+          "showBackground": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "backgroundColour": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "fontColour": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "textPadding": {
+            "expr": {
+              "Literal": {
+                "Value": "5D"
+              }
+            }
+          },
+          "enableUrl": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "Node": [
+      {
+        "properties": {
+          "nodesDistance": {
+            "expr": {
+              "Literal": {
+                "Value": "150D"
+              }
+            }
+          },
+          "spaceBetweenNodeAndText": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "shapeType": {
+            "expr": {
+              "Literal": {
+                "Value": "'circle'"
+              }
+            }
+          },
+          "showTextInsideNode": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "radius": {
+            "expr": {
+              "Literal": {
+                "Value": "25D"
+              }
+            }
+          },
+          "rootNodeText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Ignite Digital Services'"
+              }
+            }
+          },
+          "collapsedColour": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 3,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "borderThickness": {
+            "expr": {
+              "Literal": {
+                "Value": "1D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "ExpandCollapse": [
+      {
+        "properties": {
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "8D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "ConditionalFormat": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "Link": [
+      {
+        "properties": {
+          "lineType": {
+            "expr": {
+              "Literal": {
+                "Value": "'corner'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "id": [
+      0
+    ],
+    "measure": [
+      1
+    ],
+    "parentId": [
+      2
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "EmployeeID",
+        "Name": "Query1 (2).EmployeeID",
+        "Type": 2048
+      },
+      {
+        "Restatement": "EmployeeName",
+        "Name": "Query1 (2).EmployeeName",
+        "Type": 2048
+      },
+      {
+        "Restatement": "ParentID",
+        "Name": "Query1 (2).ParentID",
+        "Type": 2048
+      }
+    ],
+    "Filters": [
+      {
+        "type": 0,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Query1"
+              }
+            },
+            "Property": "EmployeeName"
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "id",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "measure",
+          "Projection": 1,
+          "isActive": false
+        },
+        {
+          "Name": "parentId",
+          "Projection": 2,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "EmployeeID",
+      "queryName": "Query1 (2).EmployeeID",
+      "roles": {
+        "id": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "CompanyTree"
+            }
+          },
+          "Property": "EmployeeID"
+        }
+      }
+    },
+    {
+      "displayName": "EmployeeName",
+      "queryName": "Query1 (2).EmployeeName",
+      "roles": {
+        "measure": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "CompanyTree"
+            }
+          },
+          "Property": "EmployeeName"
+        }
+      }
+    },
+    {
+      "displayName": "ParentID",
+      "queryName": "Query1 (2).ParentID",
+      "roles": {
+        "parentId": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "CompanyTree"
+            }
+          },
+          "Property": "ParentID"
+        }
+      }
+    }
+  ]
+}
