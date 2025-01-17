@@ -24,10 +24,10 @@ jobs:
 
     - name: Run Python script to print changed files
       run: |
-        python -c "
-import subprocess
-changed_files = subprocess.check_output(['git', 'diff', '--name-only', 'HEAD~1']).decode('utf-8').splitlines()
-print('Changed files:')
-for file in changed_files:
-    print(file)
-        "
+      python <<EOF
+      import subprocess
+      changed_files = subprocess.check_output(['git', 'diff', '--name-only', 'HEAD~1']).decode('utf-8').splitlines()
+      print('Changed files:')
+      for file in changed_files:
+        print(file)
+  
