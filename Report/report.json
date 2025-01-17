@@ -1,0 +1,57 @@
+{
+  "id": 2092306,
+  "layoutOptimization": 0,
+  "pods": [],
+  "publicCustomVisuals": [
+    "BusinessFlowF39DAE8D57A743EF89F5C3809DEE2B67",
+    "D3JsTree2F7A67F154D04FA3A4CA3E01DE5AE54B",
+    "treeImageFreeE1148639291D450198F892FA45A672BC"
+  ],
+  "reportId": 478623,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "id": 1431978,
+        "items": [
+          {
+            "id": 18858400,
+            "name": "CY23SU08",
+            "path": "BaseThemes/CY23SU08.json",
+            "resourcePackageId": 1431978,
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "reportId": 478623,
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "id": 1432000,
+        "items": [
+          {
+            "id": 18859256,
+            "name": "DnA_Logo4764303656801596.png",
+            "path": "DnA_Logo4764303656801596.png",
+            "resourcePackageId": 1432000,
+            "resourcePackageItemBlobInfoId": 10200238,
+            "type": 100
+          },
+          {
+            "id": 18859257,
+            "name": "IDS_Gradient_Horizontal_White_8320210717865018.png",
+            "path": "IDS_Gradient_Horizontal_White_8320210717865018.png",
+            "resourcePackageId": 1432000,
+            "resourcePackageItemBlobInfoId": 10200239,
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "reportId": 478623,
+        "type": 1
+      }
+    }
+  ]
+}
