@@ -1,0 +1,79 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "q1",
+              "Entity": "CompanyTree",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "q1"
+                  }
+                },
+                "Property": "EmployeeID"
+              },
+              "Name": "Query1 (2).EmployeeID",
+              "NativeReferenceName": "EmployeeID"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "q1"
+                  }
+                },
+                "Property": "EmployeeName"
+              },
+              "Name": "Query1 (2).EmployeeName",
+              "NativeReferenceName": "EmployeeName"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "q1"
+                  }
+                },
+                "Property": "ParentID"
+              },
+              "Name": "Query1 (2).ParentID",
+              "NativeReferenceName": "ParentID"
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 3,
+            "Primary": {
+              "Window": {
+                "Count": 30000
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}
