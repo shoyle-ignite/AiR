@@ -1,0 +1,406 @@
+{
+  "name": "2f54590d4b86975e3917",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 0,
+        "y": 63,
+        "z": 0,
+        "width": 1280,
+        "height": 657,
+        "tabOrder": 0
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "BusinessFlowF39DAE8D57A743EF89F5C3809DEE2B67",
+    "projections": {
+      "id": [
+        {
+          "queryRef": "CompanyTree.EmployeeID"
+        }
+      ],
+      "pid": [
+        {
+          "queryRef": "CompanyTree.ParentID"
+        }
+      ],
+      "fields": [
+        {
+          "queryRef": "Min(CompanyTree.EmployeeName)"
+        },
+        {
+          "queryRef": "Min(CompanyTree.JobTitle)"
+        },
+        {
+          "queryRef": "Min(CompanyTree.Type)"
+        }
+      ],
+      "value": [
+        {
+          "queryRef": "CountNonNull(CompanyTree.EmployeeID)"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "c",
+          "Entity": "CompanyTree",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "c"
+              }
+            },
+            "Property": "ParentID"
+          },
+          "Name": "CompanyTree.ParentID",
+          "NativeReferenceName": "ParentID"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "c"
+              }
+            },
+            "Property": "EmployeeID"
+          },
+          "Name": "CompanyTree.EmployeeID",
+          "NativeReferenceName": " Employee ID"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Property": "EmployeeName"
+              }
+            },
+            "Function": 3
+          },
+          "Name": "Min(CompanyTree.EmployeeName)",
+          "NativeReferenceName": "Name"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Property": "JobTitle"
+              }
+            },
+            "Function": 3
+          },
+          "Name": "Min(CompanyTree.JobTitle)",
+          "NativeReferenceName": "Job Title"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Property": "Type"
+              }
+            },
+            "Function": 3
+          },
+          "Name": "Min(CompanyTree.Type)",
+          "NativeReferenceName": "Type"
+        },
+        {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "c"
+                  }
+                },
+                "Property": "EmployeeID"
+              }
+            },
+            "Function": 3
+          },
+          "Name": "CountNonNull(CompanyTree.EmployeeID)",
+          "NativeReferenceName": "Employee ID"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "c"
+                    }
+                  },
+                  "Property": "EmployeeID"
+                }
+              },
+              "Function": 3
+            }
+          }
+        }
+      ]
+    },
+    "columnProperties": {
+      "CompanyTree.EmployeeID": {
+        "displayName": " Employee ID"
+      },
+      "CountNonNull(CompanyTree.EmployeeID)": {
+        "displayName": "Employee ID"
+      },
+      "Min(CompanyTree.EmployeeName)": {
+        "displayName": "Name"
+      },
+      "Min(CompanyTree.JobTitle)": {
+        "displayName": "Job Title"
+      },
+      "Min(CompanyTree.Type)": {
+        "displayName": "Type"
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true,
+    "objects": {
+      "hiddenProperties": [
+        {
+          "properties": {
+            "legendOptions": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"show\":true,\"vPosition\":\"top\",\"hPosition\":\"left\",\"titleText\":\"\",\"color\":\"#000000\",\"legendFontSize\":12,\"enableRtl\":false,\"legendType\":{\"dataNodeColor\":true,\"dataBorderColor\":true,\"icon\":true,\"link\":true,\"cf\":true},\"legendMeta\":{},\"clickAction\":\"disableOtherNodes\"}'"
+                }
+              }
+            },
+            "chartTheme": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"primaryNodeColor\":\"#ffffff\",\"fieldColor1\":\"rgba(4,4,173,1)\",\"fieldColor0\":\"rgba(4,4,173,1)\",\"strokeColor\":\"#ddd\",\"neutralColor\":\"#fff\",\"secondaryNodeColor\":\"#ffffff\",\"kpiColor\":\"#666665\",\"groupTitleFontColor\":\"#444444\",\"groupTitleBgColor\":\"#f7f7f7\",\"groupBgColor\":\"#f7f7f7\",\"isNodeColorUpdated\":false,\"isSecondaryNodeColorUpdated\":false,\"isFieldColorUpdated\":true,\"isKpiColorUpdated\":true,\"isVarPositiveColorUpdated\":false,\"isVarNegativeColorUpdated\":false,\"useContrastColorForNodeTemplate\":true}'"
+                }
+              }
+            },
+            "sparkLineOptions": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"sparkLineType\":\"line\",\"referenceLine\":[],\"baseLineVarianceType\":\"average\",\"baseLineUserInputValues\":{\"stddev\":1,\"constant\":500,\"percentile\":50},\"axisColor\":{\"CountNonNull(CompanyTree.EmployeeID)\":\"#F4A261\"},\"areaColor\":{\"CountNonNull(CompanyTree.EmployeeID)\":\"#F4A2611A\"},\"positiveColor\":\"#7bca01\",\"negativeColor\":\"#ff000a\",\"maxColor\":\"#7bca01\",\"minColor\":\"#ff000a\",\"firstColor\":\"#000000\",\"lastColor\":\"#000000\",\"labelColors\":{\"CountNonNull(CompanyTree.EmployeeID)\":\"#000000\"},\"labelMinColor\":\"#ff000a\",\"labelMaxColor\":\"#7bca01\",\"markerType\":\"none\",\"nullDisplay\":\"connectNullAsZero\",\"scale\":\"individualYScale\",\"columnChartPadding\":0,\"disabledSparkLines\":{},\"labelType\":\"none\",\"sparkLineBackgroundColor\":\"#e5faf7\",\"labelFontSize\":8}'"
+                }
+              }
+            },
+            "measureMap": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"measureMapConfig\":[{\"key\":\"title\",\"keyLabel\":\"Title\",\"value\":\"Min(CompanyTree.EmployeeName)\",\"valueLabel\":\"Name\",\"uniqueKey\":\"Min(CompanyTree.EmployeeName)title\"},{\"key\":\"subtitle\",\"keyLabel\":\"Subtitle\",\"value\":\"Min(CompanyTree.JobTitle)\",\"valueLabel\":\"Job Title\",\"uniqueKey\":\"Min(CompanyTree.JobTitle)subtitle\"}],\"isFieldMapModified\":false}'"
+                }
+              }
+            },
+            "numberFormatting": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"show\":false,\"decimalSeparator\":\".\",\"thousandSeparator\":\"\",\"decimalPlaces\":0,\"scaling\":\"default\",\"prefix\":\"\",\"suffix\":\"\",\"enableCustomScaling\":false,\"enableSemanticFormatting\":false,\"negativeValueFormat\":\"-x\",\"positiveValueFormat\":\"x\",\"negativeValueColor\":\"#db2828\",\"positiveValueColor\":\"#21ba45\",\"semanticFormattingValues\":\"\",\"thousandCustomScaling\":\"k\",\"millionCustomScaling\":\"m\",\"billionCustomScaling\":\"b\",\"trillionCustomScaling\":\"t\",\"customFormat\":{\"CountNonNull(CompanyTree.EmployeeID)\":{\"enabled\":false,\"decimalPlaces\":1,\"prefix\":\"\",\"suffix\":\"\",\"scaling\":\"auto\"}},\"showNullAs\":\"\"}'"
+                }
+              }
+            },
+            "toolbar": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"toolbarView\":\"full\",\"layoutDropdownState\":false,\"layoutOtherDropdownState\":false,\"layoutTypeDropdownState\":false,\"isUserUpdatedToolbar\":false}'"
+                }
+              }
+            },
+            "levelState": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"collapseLevel\":2,\"expandNodes\":[\"1626\",\"1600\",\"1416\",\"1610\",\"1450\",\"1418\",\"1306\",\"1182\",\"1026\"],\"subtreeExpandNodes\":[],\"prevSubtreeExpandedNodes\":[],\"showExpCollapseBtn\":true,\"nodeMaxLevel\":8}'"
+                }
+              }
+            },
+            "popupModal": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"globalPopupId\":null,\"isPopupEnabled\":false,\"popupContent\":null,\"popupList\":{\"fieldMap\":true}}'"
+                }
+              }
+            },
+            "chartConfigurations": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"chartLayout\":0,\"chartOrientation\":0,\"nodeWidth\":250,\"nodeHeight\":120,\"crossFilter\":true,\"isNodeHeightUpdatedByUser\":false}'"
+                }
+              }
+            },
+            "chartOptions": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"fontFamily\":\"Inforiver Sans\",\"chartBackgroundColor\":\"rgba(238,238,238,1)\",\"fontSize\":17,\"showGroupTitleOutside\":false,\"groupTitleFontSize\":20,\"kpiVarianceFontSize\":16,\"navigation\":2,\"scaleInitial\":1000004,\"enableSearch\":false,\"minimap\":true}'"
+                }
+              }
+            },
+            "templateConfig": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"templateName\":\"olivia\",\"customTemplate\":{\"defs\":\"\",\"size\":[250,120],\"linkAdjuster\":{\"fromX\":0,\"fromY\":0,\"toX\":0,\"toY\":0},\"ripple\":{\"radius\":0,\"color\":\"#e6e6e6\",\"rect\":null},\"expandCollapseSize\":30,\"svg\":\"<svg xmlns=\\\"http://www.w3.org/2000/svg\\\" xmlns:xlink=\\\"http://www.w3.org/1999/xlink\\\"  style=\\\"display:block;\\\" width=\\\"{w}\\\" height=\\\"{h}\\\" viewBox=\\\"{viewBox}\\\">{content}</svg>\",\"link\":\"<path stroke-linejoin=\\\"round\\\" stroke=\\\"#aeaeae\\\" stroke-width=\\\"1px\\\" fill=\\\"none\\\" d=\\\"{rounded}\\\" />\",\"assistanseLink\":\"<path stroke-linejoin=\\\"round\\\" stroke=\\\"#aeaeae\\\" stroke-width=\\\"2px\\\" fill=\\\"none\\\" d=\\\"M{xa},{ya} {xb},{yb} {xc},{yc} {xd},{yd} L{xe},{ye}\\\"/>\",\"pointer\":\"<g data-pointer=\\\"pointer\\\" transform=\\\"matrix(0,0,0,0,100,100)\\\"><radialGradient id=\\\"pointerGradient\\\"><stop stop-color=\\\"#ffffff\\\" offset=\\\"0\\\" /><stop stop-color=\\\"#C1C1C1\\\" offset=\\\"1\\\" /></radialGradient><circle cx=\\\"16\\\" cy=\\\"16\\\" r=\\\"16\\\" stroke-width=\\\"1\\\" stroke=\\\"#acacac\\\" fill=\\\"url(#pointerGradient)\\\"></circle></g>\",\"node\":\"<rect x=\\\"0\\\" y=\\\"0\\\" height=\\\"{h}\\\" width=\\\"{w}\\\" fill=\\\"#039BE5\\\" stroke-width=\\\"1\\\" stroke=\\\"#aeaeae\\\" rx=\\\"7\\\" ry=\\\"7\\\"></rect>\",\"plus\":\"<circle cx=\\\"15\\\" cy=\\\"15\\\" r=\\\"15\\\" class=\\\"boc-fill\\\" stroke=\\\"#aeaeae\\\" stroke-width=\\\"1\\\"></circle><line x1=\\\"4\\\" y1=\\\"15\\\" x2=\\\"26\\\" y2=\\\"15\\\" stroke-width=\\\"1\\\" stroke=\\\"#aeaeae\\\"></line><line x1=\\\"15\\\" y1=\\\"4\\\" x2=\\\"15\\\" y2=\\\"26\\\" stroke-width=\\\"1\\\" stroke=\\\"#aeaeae\\\"></line>\",\"minus\":\"<circle cx=\\\"15\\\" cy=\\\"15\\\" r=\\\"15\\\" class=\\\"boc-fill\\\" stroke=\\\"#aeaeae\\\" stroke-width=\\\"1\\\"></circle><line x1=\\\"4\\\" y1=\\\"15\\\" x2=\\\"26\\\" y2=\\\"15\\\" stroke-width=\\\"1\\\" stroke=\\\"#aeaeae\\\"></line>\",\"up\":\"<rect x=\\\"20\\\" y=\\\"-25\\\" width=\\\"30\\\" height=\\\"17\\\" fill=\\\"#aeaeae\\\" rx=\\\"3\\\" ry=\\\"3\\\"></rect><line x1=\\\"35\\\" x2=\\\"35\\\" y1=\\\"0\\\" y2=\\\"-8\\\" stroke=\\\"#aeaeae\\\" stroke-width=\\\"1\\\"></line>\",\"nodeMenuButton\":\"<g style=\\\"cursor:pointer;\\\" transform=\\\"matrix(1,0,0,1,225,105)\\\" data-ctrl-n-menu-id=\\\"{id}\\\"><rect x=\\\"-4\\\" y=\\\"-10\\\" fill=\\\"#000000\\\" fill-opacity=\\\"0\\\" width=\\\"22\\\" height=\\\"22\\\"></rect><circle cx=\\\"0\\\" cy=\\\"0\\\" r=\\\"2\\\" fill=\\\"#ffffff\\\"></circle><circle cx=\\\"7\\\" cy=\\\"0\\\" r=\\\"2\\\" fill=\\\"#ffffff\\\"></circle><circle cx=\\\"14\\\" cy=\\\"0\\\" r=\\\"2\\\" fill=\\\"#ffffff\\\"></circle></g>\",\"menuButton\":\"<div style=\\\"position:absolute;right:{p}px;top:{p}px; width:30px;height:50px;cursor:pointer;\\\" data-ctrl-menu=\\\"\\\"><hr style=\\\"background-color: #7A7A7A; height: 3px; border: none;\\\"><hr style=\\\"background-color: #7A7A7A; height: 3px; border: none;\\\"><hr style=\\\"background-color: #7A7A7A; height: 3px; border: none;\\\"></div>\",\"img_0\":\"<clipPath id=\\\"{randId}\\\"><circle cx=\\\"50\\\" cy=\\\"30\\\" r=\\\"40\\\"></circle></clipPath><image preserveAspectRatio=\\\"xMidYMid slice\\\" clip-path=\\\"url(#{randId})\\\" xlink:href=\\\"{val}\\\" x=\\\"10\\\" y=\\\"-10\\\"  width=\\\"80\\\" height=\\\"80\\\"></image>\",\"link_field_0\":\"<text text-anchor=\\\"middle\\\" fill=\\\"#aeaeae\\\" data-width=\\\"290\\\" x=\\\"0\\\" y=\\\"0\\\" style=\\\"font-size:10px;\\\">{val}</text>\",\"field_0\":\"<text data-width=\\\"230\\\" style=\\\"font-size: 18px;\\\" fill=\\\"#ffffff\\\" x=\\\"125\\\" y=\\\"95\\\" text-anchor=\\\"middle\\\">{val}</text>\",\"field_1\":\"<text data-width=\\\"130\\\" data-text-overflow=\\\"multiline\\\" style=\\\"font-size: 14px;\\\" fill=\\\"#ffffff\\\" x=\\\"230\\\" y=\\\"30\\\" text-anchor=\\\"end\\\">{val}</text>\",\"padding\":[50,20,35,20],\"editFormHeaderColor\":\"#039BE5\"},\"customTemplateNodeBindings\":{},\"editedTemplate\":\"olivia\"}'"
+                }
+              }
+            },
+            "kpi": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"isKPIEnabled\":true,\"kpiValue\":\"CountNonNull(CompanyTree.EmployeeID)\",\"isVarianceEnabled\":false,\"varianceNegativeColor\":\"#f39797\",\"variancePositiveColor\":\"#008000\"}'"
+                }
+              }
+            },
+            "nodeLevelTemplateMeta": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"nodeLevelTemplate\":{}}'"
+                }
+              }
+            },
+            "nodeConnector": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"linkStyle\":\"SOLID\",\"lineWidth\":2,\"color\":\"#f57c00\",\"nativeLinkColor\":\"#808080\",\"nativeLinkWidth\":1,\"nativeLineType\":\"straight\",\"connectorGlobalLineStyleType\":\"straight\",\"useConnectorGlobalStyle\":false,\"editConnection\":false,\"showConnections\":true,\"connectionFrom\":null,\"connectionTo\":null,\"connectionList\":{},\"nativeLinkArrowEnabled\":false}'"
+                }
+              }
+            },
+            "nodeCount": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"showNodeCount\":true,\"showChildNodeCount\":false,\"color\":\"#444444\"}'"
+                }
+              }
+            },
+            "recentColors": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"colors\":[\"rgba(4,4,173,1)\",\"rgba(238,238,238,1)\",\"#444444\",\"#e6e6e6\",\"#cccccc\",\"#000000\",\"#666665\",\"#808080\",\"rgba(255,136,34,1)\"]}'"
+                }
+              }
+            },
+            "rootNodeCustom": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"rootNodeCustomization\":true,\"showIndicator\":true,\"isTotalRootNodeEnabled\":false,\"totalRootNodeText\":\"Root Node Title\"}'"
+                }
+              }
+            },
+            "nodePadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"padding\":30,\"levelSeparation\":150,\"siblingSeparation\":30,\"subtreeSeparation\":30,\"subTreeLevelSeparation\":60,\"isUserUpdatePadding\":true}'"
+                }
+              }
+            },
+            "cfProps": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"isNewRule\":false,\"displayRule\":false,\"ruleName\":null,\"rules\":[{\"enabled\":true,\"ruleType\":\"colorScale\",\"basedOn\":\"varianceValue\",\"name\":\"78377060\",\"displayName\":\"KPI Indicator\",\"randomKey\":\"-1792946067\",\"colorScaleApplyTo\":\"custom\",\"colorScheme\":{\"numberOfRanges\":5,\"colors\":[\"#ffffff\",\"#bfbfbf\",\"#808080\",\"#404040\",\"#000000\"],\"minColor\":\"red\",\"middleColor\":\"blue\",\"maxColor\":\"green\"},\"targetValueType\":\"percent\",\"invertColor\":false,\"targetValues\":[{\"id\":\"-914222831\",\"from\":\"MIN\",\"to\":85059,\"fromPercentage\":0,\"toPercentage\":10,\"color\":\"#E66C37\"},{\"id\":\"-482926399\",\"from\":85059,\"to\":102037,\"fromPercentage\":10,\"toPercentage\":30,\"color\":\"#D9B300\"},{\"id\":\"-1001315763\",\"from\":102037,\"to\":\"MAX\",\"fromPercentage\":30,\"toPercentage\":100,\"color\":\"#008000\"}],\"color\":\"#ff0000\",\"colorImpactOn\":[{\"value\":\"boder\",\"label\":\"Border\",\"color\":\"#ff0000\"}],\"borderAppliedTo\":\"leftSide\",\"conditionalOperator\":\"or\",\"conditions\":[{\"name\":\"Condition 0\",\"basedOn\":\"Sum(EmployeeData-Sparkline.PY Salary)\",\"conditionType\":\"singleMeasure\",\"valueType\":\"static\",\"comparisonMeasure\":\"Sum(EmployeeData-Sparkline.PY Salary)\",\"operator\":\">\",\"comparisonValue\":0,\"from\":0,\"to\":100,\"aggregationType\":\"includes\",\"calculationType1\":\"value\",\"calculationValue1\":0,\"calculationMeasure1\":\"Sum(EmployeeData-Sparkline.PY Salary)\",\"calculationOperator\":\"+\",\"calculationType2\":\"measure\",\"calculationValue2\":100,\"calculationMeasure2\":\"Sum(EmployeeData-Sparkline.PY Salary)\",\"dimension\":\"\",\"dimensionMembers\":[],\"comparisonText\":\"\",\"fromMeasure\":\"Sum(EmployeeData-Sparkline.PY Salary)\",\"toMeasure\":\"Sum(EmployeeData-Sparkline.PY Salary)\"}],\"highlightedMeasure\":\"Min(EmployeeData-Sparkline.Title)\"},{\"enabled\":true,\"ruleType\":\"rule\",\"basedOn\":\"nodeLevel\",\"name\":\"-741742479\",\"displayName\":\"Direct\",\"randomKey\":\"716820036\",\"colorScaleApplyTo\":\"seq\",\"colorScheme\":{\"selectedColorScheme\":\"Blues\",\"numberOfRanges\":5,\"colors\":[\"#d0e1f2\",\"#94c4df\",\"#4a98c9\",\"#1764ab\",\"#08306b\"],\"minColor\":\"red\",\"middleColor\":\"blue\",\"maxColor\":\"green\"},\"targetValueType\":\"percent\",\"invertColor\":false,\"targetValues\":[{\"id\":\"-1099574061\",\"from\":\"MIN\",\"to\":3.33,\"fromPercentage\":0,\"toPercentage\":10,\"color\":\"#E66C37\"},{\"id\":\"1198804605\",\"from\":3.33,\"to\":5.67,\"fromPercentage\":10,\"toPercentage\":30,\"color\":\"#D9B300\"},{\"id\":\"908026201\",\"from\":5.67,\"to\":\"MAX\",\"fromPercentage\":30,\"toPercentage\":100,\"color\":\"#008000\"}],\"color\":\"#ff0000\",\"colorImpactOn\":[{\"value\":\"boder\",\"label\":\"Border\",\"color\":\"rgba(255,136,34,1)\"}],\"borderAppliedTo\":\"bottomSide\",\"conditionalOperator\":\"or\",\"conditions\":[{\"name\":\"Condition 0\",\"basedOn\":\"Min(CompanyTree.Type)\",\"conditionType\":\"dimension\",\"valueType\":\"static\",\"comparisonMeasure\":\"nodeLevel\",\"operator\":\">\",\"comparisonValue\":0,\"from\":0,\"to\":100,\"aggregationType\":\"includes\",\"dimensionOperatorType\":\"today\",\"dimensionCustomDate\":\"2024-01-05T15:53:28.513Z\",\"dimensionCustomBetweenDate\":\"2024-01-05T15:53:28.513Z\",\"calculationType1\":\"value\",\"calculationValue1\":0,\"calculationMeasure1\":\"nodeLevel\",\"calculationOperator\":\"+\",\"calculationType2\":\"measure\",\"calculationValue2\":100,\"calculationMeasure2\":\"nodeLevel\",\"dimension\":\"Min(CompanyTree.Type)\",\"dimensionMembers\":[{\"value\":\"Direct\",\"label\":\"Direct\"}],\"comparisonText\":\"\",\"fromMeasure\":\"nodeLevel\",\"toMeasure\":\"nodeLevel\"}],\"webUrlApplyTo\":\"Min(CompanyTree.EmployeeName)\",\"webUrlStyles\":{\"fontColor\":\"\",\"isBold\":false,\"isItalic\":false,\"isUnderline\":false,\"underlineColor\":\"\"},\"isWebUrlIconEnabled\":false,\"highlightedMeasure\":\"Min(CompanyTree.EmployeeName)\"},{\"enabled\":true,\"ruleType\":\"rule\",\"basedOn\":\"nodeLevel\",\"name\":\"1453065831\",\"displayName\":\"Indirect\",\"randomKey\":\"681385258\",\"colorScaleApplyTo\":\"seq\",\"colorScheme\":{\"selectedColorScheme\":\"Blues\",\"numberOfRanges\":5,\"colors\":[\"#d0e1f2\",\"#94c4df\",\"#4a98c9\",\"#1764ab\",\"#08306b\"],\"minColor\":\"red\",\"middleColor\":\"blue\",\"maxColor\":\"green\"},\"targetValueType\":\"percent\",\"invertColor\":false,\"targetValues\":[{\"id\":\"-1866123408\",\"from\":\"MIN\",\"to\":3.33,\"fromPercentage\":0,\"toPercentage\":10,\"color\":\"#E66C37\"},{\"id\":\"1898403314\",\"from\":3.33,\"to\":5.67,\"fromPercentage\":10,\"toPercentage\":30,\"color\":\"#D9B300\"},{\"id\":\"2029802677\",\"from\":5.67,\"to\":\"MAX\",\"fromPercentage\":30,\"toPercentage\":100,\"color\":\"#008000\"}],\"color\":\"#ff0000\",\"colorImpactOn\":[{\"value\":\"boder\",\"label\":\"Border\",\"color\":\"#666665\"}],\"borderAppliedTo\":\"bottomSide\",\"conditionalOperator\":\"or\",\"conditions\":[{\"name\":\"Condition 0\",\"basedOn\":\"Min(CompanyTree.Type)\",\"conditionType\":\"dimension\",\"valueType\":\"static\",\"comparisonMeasure\":\"nodeLevel\",\"operator\":\">\",\"comparisonValue\":0,\"from\":0,\"to\":100,\"aggregationType\":\"includes\",\"dimensionOperatorType\":\"today\",\"dimensionCustomDate\":\"2024-01-05T15:55:07.485Z\",\"dimensionCustomBetweenDate\":\"2024-01-05T15:55:07.485Z\",\"calculationType1\":\"value\",\"calculationValue1\":0,\"calculationMeasure1\":\"nodeLevel\",\"calculationOperator\":\"+\",\"calculationType2\":\"measure\",\"calculationValue2\":100,\"calculationMeasure2\":\"nodeLevel\",\"dimension\":\"Min(CompanyTree.Type)\",\"dimensionMembers\":[{\"value\":\"Indirect\",\"label\":\"Indirect\"}],\"comparisonText\":\"\",\"fromMeasure\":\"nodeLevel\",\"toMeasure\":\"nodeLevel\"}],\"webUrlApplyTo\":\"Min(CompanyTree.EmployeeName)\",\"webUrlStyles\":{\"fontColor\":\"\",\"isBold\":false,\"isItalic\":false,\"isUnderline\":false,\"underlineColor\":\"\"},\"isWebUrlIconEnabled\":false,\"highlightedMeasure\":\"Min(CompanyTree.EmployeeName)\"}],\"isUserUpdatedRule\":true}'"
+                }
+              }
+            },
+            "filterContext": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"filterContextKey\":\"none\",\"isNotesEnabled\":false}'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualConfig": [
+        {
+          "properties": {
+            "migrationSettings": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"v1_0_1_0\":{\"visualConfig\":{\"isResolved\":true},\"hiddenProperties\":{\"isResolved\":true}},\"v1_3_0_0\":{\"hiddenProperties\":{\"isResolved\":true}}}'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "license": [
+        {
+          "properties": {
+            "appSourceLicense": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ignite Digital Services Company Tree'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
